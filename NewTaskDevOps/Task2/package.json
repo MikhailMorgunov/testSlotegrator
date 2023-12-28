@@ -1,0 +1,16 @@
+{
+  "name": "test-application",
+  "version": "1.0.0",
+  "description": "Простое Node.js приложение для тестового задания",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "DevOps",
+  "license": "MIT",
+  "dependencies": {
+    "http": "^x.x.x"
+  },
+  "devDependencies": {},
+  "keywords": []
+}

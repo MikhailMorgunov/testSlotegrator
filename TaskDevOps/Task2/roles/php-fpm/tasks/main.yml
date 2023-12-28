@@ -1,0 +1,11 @@
+---
+- name: Install PHP-FPM
+  apt:
+    name: php-fpm
+    state: present
+
+- name: Copy PHP-FPM configuration template
+  template:
+    src: php-fpm.conf.j2
+    dest: /etc/php/{{ php_version }}/fpm/pool.d/{{ domain }}.conf
+  notify: Reload PHP-FPM

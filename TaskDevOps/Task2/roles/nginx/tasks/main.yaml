@@ -1,0 +1,16 @@
+---
+- name: Install Nginx
+  apt:
+    name: nginx
+    state: present
+
+- name: Create /var/www/{{ domain }} directory
+  file:
+    path: "/var/www/{{ domain }}"
+    state: directory
+
+- name: Copy Nginx configuration template
+  template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/sites-available/{{ domain }}
+  notify: Reload Nginx
