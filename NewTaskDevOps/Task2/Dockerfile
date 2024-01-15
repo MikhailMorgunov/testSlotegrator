@@ -7,5 +7,7 @@ RUN npm install
 
 COPY index.js ./
 
+ENV LANG=C.UTF-8
+
 EXPOSE 3000
 CMD ["node", "index.js"]
