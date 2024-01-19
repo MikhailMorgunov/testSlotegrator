@@ -17,10 +17,10 @@ spec:
         image: registry/image:latest
         ports:
         - containerPort: 80
-      volumeMounts:
+        volumeMounts:
+        - name: data-volume
+          mountPath: /app/data
+      volumes:
       - name: data-volume
-        mountPath: /app/data
-  volumes:
-  - name: data-volume
-    persistentVolumeClaim:
-      claimName: app-data-pvc
+        persistentVolumeClaim:
+          claimName: app-data-pvc
